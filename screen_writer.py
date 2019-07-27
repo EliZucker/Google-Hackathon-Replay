@@ -59,7 +59,7 @@ def main():
 				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
 			file = next(reviewFileIter)
 			if file:
-				string_to_display = file.read()
+				string_to_display = open(file).read()
 				display_on_rpi.display_text(string_to_display, screen)
 			time.sleep(1)
 		elif pitft.Button4:
