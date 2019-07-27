@@ -13,7 +13,7 @@ import subprocess
 #returns the words that are "seconds" back in time
 #We look back seconds*3*8 chars (avg 3 words per second, avg 8 chars per word)
 	#Or, however much we have in the buffer if we're not that far yet
-#We look back 3*seconds words, from that chunk.
+#We look back 3*seconds worods, from that chunk.
 def replay(transcription_file, seconds):
 	# with open(transcription_file, 'r', os.O_NONBLOCK) as content_file:
  #    		content = content_file.read()
@@ -48,6 +48,7 @@ def main():
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 3)
 			save_review_to_file(string_to_display)
 			display_on_rpi.display_text(string_to_display, screen)
+			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
 			time.sleep(1)
 		elif pitft.Button2:
@@ -55,6 +56,7 @@ def main():
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 6)
 			save_review_to_file(string_to_display)
 			display_on_rpi.display_text(string_to_display, screen)
+			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
 			time.sleep(1)
 		elif pitft.Button3:
@@ -68,6 +70,8 @@ def main():
 					string_to_display = open(mypath+file).read()
 					print string_to_display + ' ' +file
 					display_on_rpi.display_text(string_to_display, screen)
+					display_on_rpi.draw_file_browsing_interface(screen)
+					#cloud_conn.textToSpeech(string_to_display)
 				time.sleep(1)
 			except Exception as e:
 				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
@@ -79,6 +83,7 @@ def main():
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 3)
 			save_review_to_file(string_to_display)
 			display_on_rpi.display_text(string_to_display, screen)
+			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
 			time.sleep(1)
 
