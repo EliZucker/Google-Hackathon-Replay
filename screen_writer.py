@@ -76,7 +76,7 @@ def main():
 					display_on_rpi.draw_file_browsing_interface(screen)
 					# cloud_conn.textToSpeech(string_to_display)
 					# os.system('aplay output.mp3')
-					command = "espeak '"+string_to_display+"' --stdout | aplay -D 'default'"
+					command = "espeak \""+string_to_display+"\" --stdout | aplay -D 'default'"
 					print command
 					os.system(command)
 				time.sleep(3)
