@@ -35,14 +35,12 @@ def transcribe_file(speech_file):
 def textToSpeech(line):
 # Instantiates a client
     print 'Converting text to speech'
-    print line
+    tts_client = texttospeech.TextToSpeechClient()
     print 'hereh1'
     synthesis_input = texttospeech.types.SynthesisInput(text=line)
     print 'hereh2'
 # Set the text input to be synthesized
     
-    tts_client = texttospeech.TextToSpeechClient()
-    print 'hereh3'
 # Build the voice request, select the language code ("en-US") and the ssml
 # voice gender ("neutral")
     voice = texttospeech.types.VoiceSelectionParams(
