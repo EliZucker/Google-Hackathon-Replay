@@ -10,29 +10,30 @@ def init_display():
     screen.fill((0, 0, 0))
     return screen
 
-def draw_passive_interface(screen):
+def draw_file_browsing_interface(screen):
     pygame.draw.rect(screen, (0, 0, 0), pygame.Rect(0, 200, 320, 240))
     basicfont = pygame.font.SysFont(None, 30)
-    text1 = basicfont.render("5", True, (0, 255, 200), (0, 0, 0))
+    text1 = basicfont.render("3", True, (0, 255, 200), (0, 0, 0))
     textrect1 = text1.get_rect()
     textrect1.centerx = 27
     textrect1.centery = 220
     screen.blit(text1, textrect1)
 
-    text2 = basicfont.render("10", True, (0, 255, 200), (0, 0, 0))
+    text2 = basicfont.render("6", True, (0, 255, 200), (0, 0, 0))
     textrect2 = text2.get_rect()
     textrect2.centerx = 114
     textrect2.centery = 220
     screen.blit(text2, textrect2)
 
-    text3 = basicfont.render("20", True, (0, 255, 200), (0, 0, 0))
+    basicfont3 = pygame.font.SysFont(None, 19)
+    text3 = basicfont3.render("NEXT", True, (0, 255, 200), (0, 0, 0))
     textrect3 = text3.get_rect()
     textrect3.centerx = 207
     textrect3.centery = 220
     screen.blit(text3, textrect3)
 
     basicfont4 = pygame.font.SysFont(None, 19)
-    text4 = basicfont4.render("REPLAY", True, (255, 20, 20), (0, 0, 0))
+    text4 = basicfont4.render("EXIT", True, (255, 20, 20), (0, 0, 0))
     textrect4 = text4.get_rect()
     textrect4.centerx = 290
     textrect4.centery = 220
@@ -59,7 +60,7 @@ def display_text(text, screen, pos=(10,10)):
         y += word_height  # Start on new row.
     pygame.display.update()
 
-def draw_file_browsing_interface(screen):
+def draw_passive_interface(screen):
     pygame.draw.rect(screen, (0, 0, 0), pygame.Rect(0, 200, 320, 240))
     basicfont = pygame.font.SysFont(None, 20)
     text1 = basicfont.render("Prev", True, (0, 255, 50), (0, 0, 0))
