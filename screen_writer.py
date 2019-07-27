@@ -15,7 +15,7 @@ from pitftgpio import PiTFT_GPIO
 #We look back 3*seconds words, from that chunk.
 def replay(transcription_file, seconds):
 	with open(transcription_file, 'r') as content_file:
-    		content = content_file.read()
+    	content = content_file.read()
 		max_chars_to_look_back = min(seconds*3*8, len(content))
 		replayChunk = content[len(total_transcription)-max_chars_to_look_back:]
 		wordsInChunk = replayChunk.split()
@@ -68,6 +68,4 @@ def main():
 			time.sleep(1)
 
 if __name__=="__main__":
-	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/main_live_transcribe.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
-	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/Main.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
 	main()
