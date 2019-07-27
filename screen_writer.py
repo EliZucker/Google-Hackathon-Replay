@@ -66,5 +66,8 @@ def main():
 		elif pitft.Button4:
 			print "Button 4 pressed"
 			time.sleep(1)
+
 if __name__=="__main__":
+	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/main_live_transcribe.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
+	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/Main.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
 	main()
