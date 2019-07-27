@@ -30,6 +30,15 @@ def save_review_to_file(text_to_save):
 	mypath = '/home/pi/Google-Hackathon-Replay/review/'
 	f = open(mypath+str(time.time()), "w")
 	# print text_to_save
+	print ''
+	print ''
+	print ''
+	print ''
+	print text_to_save
+	print ''
+	print ''
+	print ''
+	print ''
 	f.write(text_to_save)
 	f.close()
 
@@ -94,6 +103,7 @@ def main():
 			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
 			time.sleep(1)
+
 
 if __name__=="__main__":
 	os.system('sudo rm -rf review/')
