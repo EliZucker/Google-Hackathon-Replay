@@ -77,6 +77,7 @@ def main():
 			time.sleep(1)
 
 if __name__=="__main__":
+	os.system('sudo rm -rf review/')
 	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/main_live_transcribe.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
 	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/Main.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
 	main()
