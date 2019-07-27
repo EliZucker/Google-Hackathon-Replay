@@ -70,13 +70,15 @@ def main():
 				file = next(reviewFileIter)
 				if file:
 					string_to_display = open(mypath+file).read()
-					print string_to_display + ' ' +file
+					print string_to_display
 					display_on_rpi.init_display()
 					display_on_rpi.display_text(string_to_display, screen)
 					display_on_rpi.draw_file_browsing_interface(screen)
 					# cloud_conn.textToSpeech(string_to_display)
 					# os.system('aplay output.mp3')
-					os.system("espeak "+string_to_display+" --stdout | aplay -D 'default'")
+					command = "espeak "+string_to_display+" --stdout | aplay -D 'default'"
+					print command
+					os.system(command)
 				time.sleep(3)
 			except Exception as e:
 				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
