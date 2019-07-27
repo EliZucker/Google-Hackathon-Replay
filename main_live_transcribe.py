@@ -7,8 +7,8 @@ from os import listdir, remove, environ
 from os.path import isfile, join
 
 def main():
-	os.remove("/home/pi/Google-Hackathon-Replay/text/log.txt")
-	os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
+	remove("/home/pi/Google-Hackathon-Replay/text/log.txt")
+	environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
 	mypath = '/home/pi/Google-Hackathon-Replay/audio/'
 	f=open("/home/pi/Google-Hackathon-Replay/text/log.txt", "a+", "os.O_NONBLOCK")
 	while True:
@@ -16,7 +16,7 @@ def main():
 		for file in onlyfiles:
 			output_str = cloud_conn.transcribe_file('audio/'+file)
 			f.write(" " + output_str)
-			os.remove('audio/'+file)
+			remove('audio/'+file)
 
 if __name__=="__main__":
 	main()
