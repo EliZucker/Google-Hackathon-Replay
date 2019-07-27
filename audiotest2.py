@@ -6,8 +6,13 @@ def record(filename):
 	CHUNK = 4096
 	FORMAT = pyaudio.paInt16
 	CHANNELS = 1
+<<<<<<< Updated upstream
 	RATE = 44100
 	RECORD_SECONDS = 5
+=======
+	RATE = 16000
+	RECORD_SECONDS = 10
+>>>>>>> Stashed changes
 	# WAVE_OUTPUT_FILENAME = "voice.wav"
 
 	p = pyaudio.PyAudio()
