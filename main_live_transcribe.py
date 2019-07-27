@@ -1,10 +1,9 @@
 import cloud_conn
 import audiotest2
 import sys
-import os
 import display_on_rpi
 import time
-from os import listdir
+from os import listdir, remove, environ
 from os.path import isfile, join
 
 def main():
