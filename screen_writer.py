@@ -75,7 +75,7 @@ def main():
 					display_on_rpi.display_text(string_to_display, screen)
 					display_on_rpi.draw_file_browsing_interface(screen)
 					#cloud_conn.textToSpeech(string_to_display)
-				time.sleep(0.1)
+				time.sleep(3)
 			except Exception as e:
 				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
 				print "reached end no more printing"
