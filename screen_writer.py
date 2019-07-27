@@ -47,27 +47,24 @@ def main():
 			resetReviewLog = True
 			time.sleep(1)
 		elif pitft.Button2:
-        	print "Button 2 pressed - screen on"
-        	string_to_display = replay("/home/pi/Google-Hackathon-Replay/log.txt", 6)
-        	save_review_to_file(string_to_display)
-        	display_on_rpi.display_text(string_to_display, screen)
-        	resetReviewLog = True
-        	time.sleep(1)
-        elif pitft.Button3:
-        	print "Button 3 pressed"
-        	if resetReviewLog:
-        		resetReviewLog = False
-        		reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
-    		file = next(reviewFileIter)
-    		if file:
-    			string_to_display = file.read()
-    			display_on_rpi.display_text(string_to_display, screen)
-    		time.sleep(1)
-    	elif pitft.Button4:
-    		print "Button 4 pressed"
-    		time.sleep(1)
-		
-
-
+			print "Button 2 pressed - screen on"
+			string_to_display = replay("/home/pi/Google-Hackathon-Replay/log.txt", 6)
+			save_review_to_file(string_to_display)
+			display_on_rpi.display_text(string_to_display, screen)
+			resetReviewLog = True
+			time.sleep(1)
+		elif pitft.Button3:
+			print "Button 3 pressed"
+			if resetReviewLog:
+				resetReviewLog = False
+				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
+			file = next(reviewFileIter)
+			if file:
+				string_to_display = file.read()
+				display_on_rpi.display_text(string_to_display, screen)
+			time.sleep(1)
+		elif pitft.Button4:
+			print "Button 4 pressed"
+			time.sleep(1)
 if __name__=="__main__":
 	main()
