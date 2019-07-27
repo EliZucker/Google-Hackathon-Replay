@@ -10,10 +10,9 @@ from pitftgpio import PiTFT_GPIO
 
 def main():
 	os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
-    pitft = PiTFT_GPIO 
+        pitft = PiTFT_GPIO(v2=True) 
 	count = 0
 	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/main_live_transcribe.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
-        print 'after subprocess'
 	while True:
         if pitft.Button1:
             print "Button 1 pressed - screen off"
