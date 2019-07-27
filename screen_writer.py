@@ -7,6 +7,7 @@ import time
 from os import listdir
 from os.path import isfile, join
 from pitftgpio import PiTFT_GPIO
+import subprocess
 
 #Reads the file where we are storing all transcribed text.
 #returns the words that are "seconds" back in time
