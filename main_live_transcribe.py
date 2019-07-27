@@ -14,10 +14,10 @@ def main():
 	while True:
 		onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 		for file in onlyfiles:
-			output_str = cloud_conn.transcribe_file(file)
+			output_str = cloud_conn.transcribe_file('audio/'+file)
 			display_on_rpi.init_display()
 			display_on_rpi.display_text(output_str)
-			os.remove(file)
+			os.remove('audio/'+file)
 
 
 if __name__=="__main__":

@@ -9,9 +9,10 @@ import subprocess
 def main():
 	os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
 	count = 0
-	subprocess.call("python main_live_transcribe", shell=True)
+	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/main_live_transcribe.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
+        print 'after subprocess'
 	while True:
-		audiotest2.record('/audio/input_audio_'+count)
+		audiotest2.record('audio/input_audio_'+str(count))
 		count+=1
 		
 
