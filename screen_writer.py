@@ -25,7 +25,7 @@ def replay(transcription_file, seconds):
 def save_review_to_file(text_to_save):
 	mypath = '/home/pi/Google-Hackathon-Replay/review/'
 	f = open(mypath+str(time.time()), "w")
-	print text_to_save
+	# print text_to_save
 	f.write(text_to_save)
 	f.close()
 
@@ -58,11 +58,16 @@ def main():
 			if resetReviewLog:
 				resetReviewLog = False
 				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
-			file = next(reviewFileIter)
-			if file:
-				string_to_display = open(mypath+file).read()
-				display_on_rpi.display_text(string_to_display, screen)
-			time.sleep(1)
+			try:
+				file = next(reviewFileIter)
+				if file:
+					string_to_display = open(mypath+file).read()
+					print string_to_display + ' ' +file
+					display_on_rpi.display_text(string_to_display, screen)
+				time.sleep(1)
+			except Exception as e:
+				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
+				print "reached end no more printing"
 		elif pitft.Button4:
 			print "Button 4 pressed"
 			time.sleep(1)
