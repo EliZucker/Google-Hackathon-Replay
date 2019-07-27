@@ -8,7 +8,7 @@ from os import listdir, remove, environ
 from os.path import isfile, join
 
 def main():
-	remove("/home/pi/Google-Hackathon-Replay/text/log.txt")
+	#remove("/home/pi/Google-Hackathon-Replay/text/log.txt")
 	environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
 	mypath = '/home/pi/Google-Hackathon-Replay/audio/'
 	log_file=open("/home/pi/Google-Hackathon-Replay/text/log.txt", "w", os.O_NONBLOCK)
