@@ -33,7 +33,7 @@ def main():
 	time.sleep(1)
 	pitft = PiTFT_GPIO(v2=True) 
 	screen = display_on_rpi.init_display()
-	f=open("/home/pi/Google-Hackathon-Replay/text/log.txt", "r", "os.O_NONBLOCK")
+	f=open("/home/pi/Google-Hackathon-Replay/text/log.txt", "r", os.O_NONBLOCK)
 	mypath = '/home/pi/Google-Hackathon-Replay/review/'
 	resetReviewLog = True
 	reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
