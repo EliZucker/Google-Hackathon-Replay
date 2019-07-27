@@ -10,7 +10,7 @@ def main():
 	# remove("/home/pi/Google-Hackathon-Replay/text/log.txt")
 	environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
 	mypath = '/home/pi/Google-Hackathon-Replay/audio/'
-	f=open("/home/pi/Google-Hackathon-Replay/text/log.txt", "a", "os.O_NONBLOCK")
+	f=open("/home/pi/Google-Hackathon-Replay/text/log.txt", "w")
 	while True:
 		onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 		for file in onlyfiles:
