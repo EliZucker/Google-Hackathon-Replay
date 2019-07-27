@@ -1,5 +1,6 @@
 import cloud_conn
 import audiotest2
+import main_live_transcribe
 import sys
 import os
 import display_on_rpi
@@ -17,6 +18,8 @@ def main():
         if pitft.Button1:
             print "Button 1 pressed - screen off"
             pitft.Backlight(False)
+            string_for_audio = main_live_transcribe.replay("/home/pi/Google-Hackathon-Replay/log.txt", 5)
+            #Play audio
         if pitft.Button2:
             print "Button 2 pressed - screen on"
             pitft.Backlight(True) 
