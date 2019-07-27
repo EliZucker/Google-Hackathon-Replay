@@ -23,6 +23,7 @@ def replay(transcription_file, seconds):
 		return wordsInChunk[len(wordsInChunk)-max_words_to_replay:]
 
 def save_review_to_file(text_to_save):
+	print(text_to_save)
 	mypath = '/home/pi/Google-Hackathon-Replay/review/'
 	f = open(mypath+str(time.time()), "w")
 	f.write(text_to_save)
