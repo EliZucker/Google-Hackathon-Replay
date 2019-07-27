@@ -15,13 +15,16 @@ import subprocess
 	#Or, however much we have in the buffer if we're not that far yet
 #We look back 3*seconds words, from that chunk.
 def replay(transcription_file, seconds):
-	with open(transcription_file, 'r', os.O_NONBLOCK) as content_file:
-    		content = content_file.read()
-		max_chars_to_look_back = min(seconds*3*8, len(content))
-		replayChunk = content[len(content)-max_chars_to_look_back:]
-		wordsInChunk = replayChunk.split()
-		max_words_to_replay = min(seconds*3, len(wordsInChunk))
-		return " ".join(wordsInChunk[len(wordsInChunk)-max_words_to_replay:])
+	# with open(transcription_file, 'r', os.O_NONBLOCK) as content_file:
+ #    		content = content_file.read()
+ 	fil = fil.open(transcription_file, 'r', os.O_NONBLOCK)
+ 	content = fil.read()
+ 	fil.close()
+	max_chars_to_look_back = min(seconds*3*8, len(content))
+	replayChunk = content[len(content)-max_chars_to_look_back:]
+	wordsInChunk = replayChunk.split()
+	max_words_to_replay = min(seconds*3, len(wordsInChunk))
+	return " ".join(wordsInChunk[len(wordsInChunk)-max_words_to_replay:])
 
 def save_review_to_file(text_to_save):
 	mypath = '/home/pi/Google-Hackathon-Replay/review/'
