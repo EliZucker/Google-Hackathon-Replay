@@ -47,6 +47,7 @@ def main():
 			print "Button 1 pressed - screen off"
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 3)
 			save_review_to_file(string_to_display)
+			display_on_rpi.init_display()
 			display_on_rpi.display_text(string_to_display, screen)
 			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
@@ -55,6 +56,7 @@ def main():
 			print "Button 2 pressed - screen on"
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 6)
 			save_review_to_file(string_to_display)
+			display_on_rpi.init_display()
 			display_on_rpi.display_text(string_to_display, screen)
 			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
@@ -69,6 +71,7 @@ def main():
 				if file:
 					string_to_display = open(mypath+file).read()
 					print string_to_display + ' ' +file
+					display_on_rpi.init_display()
 					display_on_rpi.display_text(string_to_display, screen)
 					display_on_rpi.draw_file_browsing_interface(screen)
 					#cloud_conn.textToSpeech(string_to_display)
@@ -82,6 +85,7 @@ def main():
 		else:
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 3)
 			save_review_to_file(string_to_display)
+			display_on_rpi.init_display()
 			display_on_rpi.display_text(string_to_display, screen)
 			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
