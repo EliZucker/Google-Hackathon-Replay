@@ -3,6 +3,7 @@ from google.cloud import texttospeech
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
+import io
 
 def transcribe_file(speech_file):
     """Transcribe the given audio file."""

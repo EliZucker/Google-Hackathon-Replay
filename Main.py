@@ -1,5 +1,7 @@
 import cloud_conn
 import audiotest2
+import sys
+import os
 import display_on_rpi
 
 
