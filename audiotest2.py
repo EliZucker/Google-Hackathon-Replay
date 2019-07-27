@@ -1,8 +1,7 @@
 import pyaudio
 import wave
-import Queue
 
-def record(frames):
+def record(filename):
 	CHUNK = 4096
 	FORMAT = pyaudio.paInt16
 	CHANNELS = 1
@@ -19,10 +18,10 @@ def record(frames):
 	                frames_per_buffer=CHUNK)
 
 	print("* recording")
-
+	frames = []
 	for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
 	    data = stream.read(CHUNK, exception_on_overflow = False)
-	    frames.put(data)
+	    frames.append(data)
 
 	print("* done recording")
 
