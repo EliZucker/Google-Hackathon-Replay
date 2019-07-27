@@ -75,6 +75,12 @@ def main():
 		elif pitft.Button4:
 			print "Button 4 pressed"
 			time.sleep(1)
+		else:
+			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 3)
+			save_review_to_file(string_to_display)
+			display_on_rpi.display_text(string_to_display, screen)
+			resetReviewLog = True
+			time.sleep(1)
 
 if __name__=="__main__":
 	os.system('sudo rm -rf review/')
