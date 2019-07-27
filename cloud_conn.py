@@ -36,17 +36,18 @@ def textToSpeech(line):
 # Instantiates a client
     print 'Converting text to speech'
     print line
+    print 'hereh1'
     tts_client = texttospeech.TextToSpeechClient()
-
+    print 'hereh2'
 # Set the text input to be synthesized
     synthesis_input = texttospeech.types.SynthesisInput(text=line)
-
+    print 'hereh3'
 # Build the voice request, select the language code ("en-US") and the ssml
 # voice gender ("neutral")
     voice = texttospeech.types.VoiceSelectionParams(
         language_code='en-US',
         ssml_gender=texttospeech.enums.SsmlVoiceGender.NEUTRAL)
-
+    print 'hereh4'
 # Select the type of audio file you want returned
     audio_config = texttospeech.types.AudioConfig(
         audio_encoding=texttospeech.enums.AudioEncoding.MP3)
