@@ -60,7 +60,7 @@ def main():
 			display_on_rpi.display_text(string_to_display, screen)
 			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
-			time.sleep(1)
+			time.sleep(0.2)
 		elif pitft.Button2:
 			print "Button 2 pressed - screen on"
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 6)
@@ -69,7 +69,7 @@ def main():
 			display_on_rpi.display_text(string_to_display, screen)
 			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
-			time.sleep(1)
+			time.sleep(0.2)
 		elif pitft.Button3:
 			print "Button 3 pressed"
 			if resetReviewLog:
@@ -94,14 +94,14 @@ def main():
 				print "reached end no more printing"
 		elif pitft.Button4:
 			print "Button 4 pressed"
-			time.sleep(1)
+			time.sleep(0.2)
 		else:
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 3)
 			display_on_rpi.init_display()
 			display_on_rpi.display_text(string_to_display, screen)
 			display_on_rpi.draw_file_browsing_interface(screen)
 			resetReviewLog = True
-			time.sleep(1)
+			time.sleep(0.2)
 
 
 if __name__=="__main__":
