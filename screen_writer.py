@@ -24,9 +24,10 @@ def replay(transcription_file, seconds):
 
 def save_review_to_file(text_to_save):
 	text_to_str = " ".join(text_to_save)
+	print text_to_str
 	mypath = '/home/pi/Google-Hackathon-Replay/review/'
 	f = open(mypath+str(time.time()), "w")
-	f.write(text_to_save)
+	f.write(text_to_str)
 	f.close()
 
 
