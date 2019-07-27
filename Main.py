@@ -4,12 +4,14 @@ import sys
 import os
 import display_on_rpi
 import time
+import subprocess
 
-
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
-frames = Queue.Queue()
-audiotest2.record(frames)
-output_str = cloud_conn.transcribe_file(sys.argv[1]+'.wav')
-display_on_rpi.init_display()
-display_on_rpi.display_text(output_str)
-time.sleep(10)
+def main():
+	os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
+	count = 0
+	subprocess.call("python main_live_transcribe", shell=True)
+	while True:
+		audiotest2.record('/audio/input_audio_'+count)
+		count+=1
+if __name__=="__main__":
+	main()
