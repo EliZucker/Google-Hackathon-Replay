@@ -74,7 +74,8 @@ def main():
 					display_on_rpi.init_display()
 					display_on_rpi.display_text(string_to_display, screen)
 					display_on_rpi.draw_file_browsing_interface(screen)
-					#cloud_conn.textToSpeech(string_to_display)
+					cloud_conn.textToSpeech(string_to_display)
+					os.system('aplay output.mp3')
 				time.sleep(3)
 			except Exception as e:
 				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
