@@ -97,7 +97,6 @@ def main():
 			time.sleep(1)
 		else:
 			string_to_display = replay("/home/pi/Google-Hackathon-Replay/text/log.txt", 3)
-			save_review_to_file(string_to_display)
 			display_on_rpi.init_display()
 			display_on_rpi.display_text(string_to_display, screen)
 			display_on_rpi.draw_file_browsing_interface(screen)
