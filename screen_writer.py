@@ -85,9 +85,10 @@ def main():
 					display_on_rpi.draw_file_browsing_interface(screen)
 					# cloud_conn.textToSpeech(string_to_display)
 					# os.system('aplay output.mp3')
-					command = "espeak \""+string_to_display+"\" --stdout | aplay -D 'default'"
-					print command
-					os.system(command)
+					if len(string_to_display)>1:
+						command = "espeak \""+string_to_display+"\" --stdout | aplay -D 'default'"
+						print command
+						os.system(command)
 				time.sleep(1)
 			except Exception as e:
 				reviewFileIter = iter([f for f in listdir(mypath) if isfile(join(mypath, f))])
