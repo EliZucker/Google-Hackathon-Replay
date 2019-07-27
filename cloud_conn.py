@@ -35,6 +35,7 @@ def transcribe_file(speech_file):
 def textToSpeech(line):
 # Instantiates a client
     print 'Converting text to speech'
+    print line
     tts_client = texttospeech.TextToSpeechClient()
 
 # Set the text input to be synthesized
