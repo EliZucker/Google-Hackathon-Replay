@@ -3,12 +3,10 @@ from google.cloud import texttospeech
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
-import io
-client = speech.SpeechClient()
 
 def transcribe_file(speech_file):
     """Transcribe the given audio file."""
-
+    client = speech.SpeechClient()
     # [START speech_python_migration_sync_request]
     # [START speech_python_migration_config]
     with io.open(speech_file, 'rb') as audio_file:
@@ -59,10 +57,3 @@ def textToSpeech(line):
         # Write the response to the output file.
         out.write(response.audio_content)
         print('Audio content written to file "output.mp3"')
-def main():
-    line = transcribe_file("/home/brian_oppenheim/Google-Hackathon-Replay/voice4.wav")
-    print(line)
-    #textToSpeech("home/brian_oppenheim/Google-Hackathon-Replay/voice4.wav")
-
-if __name__ == "__main__":
-    main()
