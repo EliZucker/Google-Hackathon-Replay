@@ -40,8 +40,8 @@ def main():
 	while True:
 		string_to_display = ''
 		if pitft.Button1:
-            print "Button 1 pressed - screen off"
-            string_to_display = replay("/home/pi/Google-Hackathon-Replay/log.txt", 3)
+			print "Button 1 pressed - screen off"
+			string_to_display = replay("/home/pi/Google-Hackathon-Replay/log.txt", 3)
             save_review_to_file(string_to_display)
             display_on_rpi.display_text(string_to_display, screen)
             resetReviewLog = True
