@@ -52,6 +52,7 @@ def textToSpeech(line):
 
 # Perform the text-to-speech request on the text input with the selected
 # voice parameters and audio file type
+    print 'Before receiving a response'
     response = tts_client.synthesize_speech(synthesis_input, voice, audio_config)
     print 'Received a response and saving it now'
     # The response's audio_content is binary.
