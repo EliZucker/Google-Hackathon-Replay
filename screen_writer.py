@@ -17,7 +17,7 @@ import subprocess
 def replay(transcription_file, seconds):
 	# with open(transcription_file, 'r', os.O_NONBLOCK) as content_file:
  #    		content = content_file.read()
- 	fil = fil.open(transcription_file, 'r', os.O_NONBLOCK)
+ 	fil = open(transcription_file, 'r', os.O_NONBLOCK)
  	content = fil.read()
  	fil.close()
 	max_chars_to_look_back = min(seconds*3*8, len(content))
