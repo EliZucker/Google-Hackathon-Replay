@@ -8,8 +8,8 @@ import subprocess
 from pitftgpio import PiTFT_GPIO
 
 def main():
-    pitft = PiTFT_GPIO()
 	os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/replayml-abeb9b1d988e.json"
+    pitft = PiTFT_GPIO 
 	count = 0
 	subprocess.Popen("sudo python /home/pi/Google-Hackathon-Replay/main_live_transcribe.py", stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
         print 'after subprocess'
